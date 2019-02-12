@@ -5,8 +5,14 @@ import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+import os
 
 app = Flask(__name__)
+
+# Port number is required to fetch from env variable
+# http://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html#PORT
+
+cf_port = os.getenv("PORT")
 
 colors = ['b', 'orange', 'g', 'r', 'c', 'm', 'y', 'k', 'Brown', 'ForestGreen']
 
@@ -32,7 +38,7 @@ def generateTestData():
         labels = np.hstack((labels, np.ones(200) * i))
     return xpts, ypts, labels
 
-@app.route('/graphs')
+@app.route('/')
 def graphs():
     
     #Clears all previously plotted graphs
@@ -55,5 +61,7 @@ def graphs():
     )
  
 if __name__ == '__main__':
-    app.debug = True
-    app.run()
+	if cf_port is None:
+		app.run(host='0.0.0.0', port=5000, debug=True)
+	else:
+		app.run(host='0.0.0.0', port=int(cf_port), debug=True)
