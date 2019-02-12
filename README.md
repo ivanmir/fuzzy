@@ -18,7 +18,7 @@ https://github.com/trustedanalytics/scipy-python-buildpack
 
 To push it to Cloud Foundry you will need to push it twice.
 
-Commend scikit-fuzzi requitement and do a cf push.
+Comment scikit-fuzzy requitement and do a cf push.
 
 After it installs all requirements, the application will fail.
 
