@@ -8,6 +8,10 @@ A skfuzzy sample made with:
 - MatPlotLib 
 - SciKit-Fuzzy
 
+The samples are an adaptation of the followin samples:
+
+https://scikit-fuzzy.readthedocs.io/en/latest/auto_examples/plot_cmeans.html
+
 This app uses the following buildpack:
 
 https://github.com/trustedanalytics/scipy-python-buildpack
