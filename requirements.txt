@@ -1,4 +1,0 @@
-Flask>=0.12.3
-numpy>=1.16.1
-matplotlib==1.4.3
-scikit-fuzzy>=0.4.0
