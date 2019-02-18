@@ -3,6 +3,9 @@ applications:
 - name: flask-skfuzzy
   memory: 512MB
   disk_quota: 2G
-  #buildpack: https://github.com/trustedanalytics/scipy-python-buildpack
-  buildpack: python_buildpack
+  buildpacks:
+    - https://github.com/ivanmir/python-buildpack#numpy
+  #https://github.com/cloudfoundry/python-buildpack
   stack: cflinuxfs3
+  env:
+    #BP_DEBUG: "False"
