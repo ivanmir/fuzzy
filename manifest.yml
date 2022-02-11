@@ -1,8 +1,8 @@
 ---
 applications:
 - name: flask-skfuzzy
-  memory: 512MB
-  disk_quota: 2G
+  memory: 4G
+  disk_quota: 4G
   #buildpack: https://github.com/trustedanalytics/scipy-python-buildpack
   buildpack: python_buildpack
   stack: cflinuxfs3
